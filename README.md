@@ -1,2 +1,2 @@
-# askom
-strona WWW
+# ASKOM
+Strona internetowa firmy ASKOM Sebastian Jankowski
