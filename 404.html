@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Błąd 404 | ASKOM</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 100px 20px;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+        .error-container h2 { font-size: 2rem; margin-bottom: 20px; }
+        .error-container p { margin-bottom: 40px; color: #666; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo"><a href="index.html">ASKOM</a></div>
+            
+            <button class="menu-toggle" id="mobile-menu" aria-label="Otwórz menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav>
+                <ul class="nav-links" id="nav-list">
+                    <li><a href="index.html">Strona główna</a></li>
+                    <li><a href="oferta.html">Oferta</a></li>
+                    <li><a href="polityka.html">Polityka prywatności</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container error-container">
+        <div class="error-code">404</div>
+        <h2>Ups! Zagubiłeś się w sieci?</h2>
+        <p>Strona, której szukasz, nie istnieje lub została przeniesiona pod inny adres.</p>
+        <a href="index.html" class="btn btn-main">Wróć do strony głównej</a>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-cols">
+                <div>
+                    <strong>ASKOM Sebastian Jankowski</strong><br>
+                    NIP: PL5321629359
+                </div>
+                <div>
+                    <a href="polityka.html" style="color:#666; text-decoration: underline;">Polityka Prywatności</a>
+                </div>
+            </div>
+            <div class="footer-bottom" style="text-align: center; margin-top: 20px; border-top: 1px solid #222; padding-top: 20px;">
+                &copy; 2026 ASKOM. Wszystkie prawa zastrzeżone.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        menuBtn.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            menuBtn.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
