@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASKOM | Polityka Prywatności</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .policy-content h3 { margin-top: 30px; color: var(--dark); border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        .policy-content p, .policy-content li { font-size: 0.95rem; color: #555; margin-bottom: 10px; }
+        .policy-content ul { margin-left: 20px; list-style-type: disc; }
+    </style>
+</head>
+<body>
+
+        <header>
+    <div class="container nav-container">
+        <div class="logo"><a href="index.html">ASKOM</a></div>
+        
+        <button class="menu-toggle" id="mobile-menu" aria-label="Otwórz menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav>
+            <ul class="nav-links" id="nav-list">
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="oferta.html">Oferta</a></li>
+                <li><a href="polityka.html" class="active">Polityka prywatności</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <section class="section-padding">
+        <div class="container policy-content" style="max-width: 900px;">
+            <div class="section-header" style="text-align: left;">
+                <h2>Polityka Prywatności</h2>
+                <div class="divider" style="margin: 0;"></div>
+            </div>
+
+            <h3>1. Informacje ogólne</h3>
+            <p>Niniejsza Polityka Prywatności określa zasady przetwarzania i ochrony danych osobowych przekazanych przez Użytkowników w związku z korzystaniem z serwisu internetowego askom.waw.pl (dalej jako "Serwis").</p>
+
+            <h3>2. Administrator danych osobowych</h3>
+            <p>Administratorem danych osobowych jest firma <strong>ASKOM Sebastian Jankowski</strong> z siedzibą w Otwocku (05-402), ul. Majowa 72, NIP: 5321629359, e-mail: info@askom.waw.pl, tel.: +48 600 202 796.</p>
+
+            <h3>3. Cele i podstawy przetwarzania danych osobowych</h3>
+            <p>Administrator przetwarza dane osobowe Użytkowników w następujących celach:</p>
+            <ul>
+                <li>Realizacja zapytań ofertowych i umów serwisowych związanych z obsługą IT oraz systemami InsERT (art. 6 ust. 1 lit. b RODO).</li>
+                <li>Prowadzenie komunikacji technicznej i wsparcia helpdesk.</li>
+                <li>Marketing własnych usług Administratora (art. 6 ust. 1 lit. f RODO).</li>
+                <li>Wypełnienie obowiązków prawnych, np. wystawianie faktur (art. 6 ust. 1 lit. c RODO).</li>
+            </ul>
+
+            <h3>4. Okres przechowywania danych</h3>
+            <p>Dane osobowe będą przechowywane przez okres:</p>
+            <ul>
+                <li>W przypadku realizacji usług – przez czas trwania współpracy oraz do czasu upływu terminu przedawnienia roszczeń.</li>
+                <li>W celach podatkowych i księgowych – zgodnie z obowiązującymi przepisami prawa (zazwyczaj 5 lat).</li>
+                <li>Do czasu wycofania zgody lub wniesienia sprzeciwu w przypadku działań marketingowych.</li>
+            </ul>
+
+            <h3>5. Odbiorcy danych</h3>
+            <p>Odbiorcami danych mogą być podmioty zewnętrzne wspierające Administratora w realizacji usług, w tym:</p>
+            <ul>
+                <li>Dostawcy infrastruktury IT (np. Microsoft Azure).</li>
+                <li>Dostawcy oprogramowania biznesowego (np. InsERT).</li>
+                <li>Podmioty świadczące usługi księgowe lub prawne.</li>
+            </ul>
+
+            <h3>6. Prawa Użytkowników</h3>
+            <p>Każdemu Użytkownikowi przysługuje prawo do:</p>
+            <ul>
+                <li>Dostępu do swoich danych, sprostowania, usunięcia lub ograniczenia ich przetwarzania.</li>
+                <li>Wniesienia sprzeciwu wobec przetwarzania.</li>
+                <li>Przenoszenia danych.</li>
+                <li>Wniesienia skargi do organu nadzorczego (Prezes Urzędu Ochrony Danych Osobowych).</li>
+            </ul>
+
+            <h3>7. Pliki cookies</h3>
+            <p>Serwis wykorzystuje pliki cookies w celu zapewnienia prawidłowego działania strony oraz analizy ruchu. Użytkownik może w każdej chwili zmienić ustawienia dotyczące cookies w swojej przeglądarce internetowej.</p>
+
+            <h3>8. Zabezpieczenie danych</h3>
+            <p>Administrator stosuje nowoczesne środki techniczne, w tym certyfikaty SSL oraz bezpieczne systemy archiwizacji, aby zapewnić najwyższy poziom bezpieczeństwa danych adekwatny do branży IT.</p>
+
+            <h3>9. Kontakt</h3>
+            <p>W sprawach związanych z ochroną danych prosimy o kontakt pod adresem: <strong>info@askom.waw.pl</strong>.</p>
+
+            <p style="margin-top: 40px; font-style: italic;">Data ostatniej aktualizacji: 01.01.2026 r.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-cols">
+                <div>
+                    <strong>ASKOM Sebastian Jankowski</strong><br>
+                    NIP: PL5321629359
+                </div>
+                
+                <div class="footer-bottom">
+                    &copy; 2026 ASKOM. Wszystkie prawa zastrzeżone.
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+    const menuBtn = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+
+    menuBtn.addEventListener('click', () => {
+        navList.classList.toggle('active');
+        menuBtn.classList.toggle('open');
+    });
+
+    // Zamyka menu po kliknięciu w link
+    document.querySelectorAll('.nav-links a').forEach(n => n.addEventListener('click', () => {
+        navList.classList.remove('active');
+        menuBtn.classList.remove('open');
+    }));
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASKOM | Kontakt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+        <header>
+    <div class="container nav-container">
+        <div class="logo"><a href="index.html">ASKOM</a></div>
+        
+        <button class="menu-toggle" id="mobile-menu" aria-label="Otwórz menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav>
+            <ul class="nav-links" id="nav-list">
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="oferta.html">Oferta</a></li>
+                <li><a href="polityka.html">Polityka prywatności</a></li>
+                <li><a href="kontakt.html" class="active">Kontakt</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <section class="section-padding">
+        <div class="container contact-wrapper">
+            
+            <div class="contact-details">
+                <h2>Skontaktuj się z nami</h2>
+                <div class="divider" style="margin: 0 0 30px 0;"></div>
+                <p style="margin-bottom: 30px;">Rozwiążemy każdy Twój problem technologiczny. Zapraszamy do kontaktu telefonicznego lub mailowego.</p>
+                
+                <div class="info-row">
+                    <strong>TEL:</strong> +48 600 202 796
+                </div>
+                <div class="info-row">
+                    <strong>EMAIL:</strong> info@askom.waw.pl
+                </div>
+                <div class="info-row">
+                    <strong>ADRES:</strong> ul. Majowa 72, 05-402 Otwock
+                </div>
+                <div class="info-row">
+                    <strong>NIP:</strong> 5321629359
+                </div>
+                
+                <div style="margin-top: 40px; padding: 20px; background: #f9f9f9; border-left: 4px solid var(--primary);">
+                    <strong>Obszar działania:</strong><br>
+                    Warszawa, Otwock, Józefów, Sulejówek, Stara Miłosna, Mińsk Mazowiecki.
+                </div>
+            </div>
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2449.393963560797!2d21.259198077080143!3d52.12715476523978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47192ac306d787cf%3A0x8708c1ab6dbe95e4!2sASKOM%20Sebastian%20Jankowski!5e0!3m2!1spl!2spl!4v1767296216655!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-cols">
+                <div>
+                    <strong>ASKOM Sebastian Jankowski</strong><br>
+                    NIP: PL5321629359
+                </div>
+                
+                <div class="footer-bottom">
+                    &copy; 2026 ASKOM. Wszystkie prawa zastrzeżone.
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+    const menuBtn = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+
+    menuBtn.addEventListener('click', () => {
+        navList.classList.toggle('active');
+        menuBtn.classList.toggle('open');
+    });
+
+    // Zamyka menu po kliknięciu w link
+    document.querySelectorAll('.nav-links a').forEach(n => n.addEventListener('click', () => {
+        navList.classList.remove('active');
+        menuBtn.classList.remove('open');
+    }));
+</script>
+</body>
+</html>

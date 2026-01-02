@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASKOM | Zakres Usług</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+    <div class="container nav-container">
+        <div class="logo"><a href="index.html">ASKOM</a></div>
+        
+        <button class="menu-toggle" id="mobile-menu" aria-label="Otwórz menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav>
+            <ul class="nav-links" id="nav-list">
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="oferta.html" class="active">Oferta</a></li>
+                <li><a href="polityka.html">Polityka prywatności</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Kompletna oferta IT</h2>
+                <div class="divider"></div>
+                <p style="margin-top: 15px;">Dostarczamy rozwiązania, które działają.</p>
+            </div>
+
+            <div class="services-grid">
+                
+                <div class="service-card">
+                    <h3>Infrastruktura i Sieci</h3>
+                    <ul>
+                        <li>Wdrażanie i obsługa serwerów oraz stacji roboczych.</li>
+                        <li>Administracja sieciami LAN (lokalne) i WAN (rozległe).</li>
+                        <li>Bezpieczne tunele VPN do pracy zdalnej.</li>
+                        <li>Profesjonalny osprzęt sieciowy (Cisco, Ubiquiti, Mikrotik).</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Oprogramowanie dla Firm</h3>           
+                    <ul style="margin-top:15px;">
+                        <li><strong>InsERT GT:</strong> Subiekt, Rewizor, Rachmistrz, Gratyfikant, Gestor.</li>
+                        <li>Migracja danych i wsparcie przy zmianie systemów.</li>
+                        <li>Integracja systemów sprzedażowych.</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" id="cyber">
+                    <h3>Cyberbezpieczeństwo</h3>
+                    <ul>
+                        <li>Audyty bezpieczeństwa infrastruktury IT.</li>
+                        <li>Wdrażanie zaawansowanych systemów Firewall i UTM.</li>
+                        <li>Ochrona punktów końcowych (Antywirus / EDR).</li>
+                        <li>Zabezpieczanie sieci przed atakami (Ransomware, Phishing).</li>
+                        <li>Polityki bezpieczeństwa zgodne z RODO.</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Data Security & Cloud</h3>
+                    <ul>
+                        <li>Implementacja chmur prywatnych i hybrydowych.</li>
+                        <li>Systemy automatycznej archiwizacji danych (Backup & Restore).</li>
+                        <li>Zabezpieczenie danych firmowych przed utratą.</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Outsourcing i Doradztwo</h3>
+                    <ul>
+                        <li>Reprezentacja klienta przed dostawcami telekomunikacyjnymi.</li>
+                        <li>Sprzedaż i serwis sprzętu (serwery, komputery).</li>
+                        <li>Usługi Helpdesk (wsparcie użytkowników).</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-cols">
+                <div>
+                    <strong>ASKOM Sebastian Jankowski</strong><br>
+                    NIP: PL5321629359
+                </div>
+                
+                <div class="footer-bottom">
+                    &copy; 2026 ASKOM. Wszystkie prawa zastrzeżone.
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+    const menuBtn = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+
+    menuBtn.addEventListener('click', () => {
+        navList.classList.toggle('active');
+        menuBtn.classList.toggle('open');
+    });
+
+    // Zamyka menu po kliknięciu w link
+    document.querySelectorAll('.nav-links a').forEach(n => n.addEventListener('click', () => {
+        navList.classList.remove('active');
+        menuBtn.classList.remove('open');
+    }));
+</script>
+</body>
+</html>
