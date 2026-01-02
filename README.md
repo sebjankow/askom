@@ -1,0 +1,2 @@
+# askom
+strona WWW
