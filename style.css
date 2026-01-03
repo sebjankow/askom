@@ -16,7 +16,7 @@ body {
     background-color: var(--white);
     line-height: 1.6;
     opacity: 0; 
-    animation: fadeIn 0.8s forwards; /* PŁYNNE WEJŚCIE */
+    animation: fadeIn 0.8s forwards; 
 }
 
 @keyframes fadeIn { to { opacity: 1; } }
@@ -27,24 +27,46 @@ ul { list-style: none; }
 
 /* NAWIGACJA */
 header { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
-.nav-container { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+.nav-container { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+
+/* LOGO I SKALOWANIE OBRAZKA */
 .logo { font-size: 1.8rem; font-weight: 800; color: var(--dark); letter-spacing: -1px; }
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-img {
+    height: 45px;            /* Skalowanie dużego obrazka */
+    width: auto;
+    border-radius: 8px;      /* Zaokrąglenie rogów logo */
+    display: block;
+    transition: var(--transition);
+}
+
+.logo a:hover .logo-img {
+    transform: scale(1.05);  /* Delikatne powiększenie przy najechaniu */
+}
+
 .logo span { color: var(--primary); }
+
 .nav-links { display: flex; gap: 40px; }
 .nav-links a { font-weight: 600; font-size: 0.95rem; text-transform: uppercase; color: var(--dark); position: relative; }
 .nav-links a:hover, .nav-links a.active { color: var(--primary); }
 .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background: var(--primary); transition: var(--transition); }
 .nav-links a:hover::after { width: 100%; }
 
-/* ZAKTUALIZOWANE HERO Z NOWYM ZDJĘCIEM */
+/* HERO */
 .hero { 
     height: 70vh; 
-    /* Nowy link do zdjęcia z kodem (BfrQnKBulYQ) z odpowiednimi parametrami przycięcia */
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6)), 
                 url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop'); 
     background-size: cover; 
     background-position: center; 
-    background-attachment: fixed; /* Efekt paralaksy przy przewijaniu */
+    background-attachment: fixed;
     display: flex; 
     align-items: center; 
     color: var(--white); 
@@ -57,33 +79,20 @@ header { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.05); posi
 .btn-main { background: var(--primary); color: var(--white); border: 2px solid var(--primary); }
 .btn-main:hover { background: var(--secondary); border-color: var(--secondary); transform: translateY(-2px); }
 
-/* SEKCJE STANDARDOWE */
+/* SEKCJE */
 .section-padding { padding: 80px 0; }
 .bg-light { background: var(--light-gray); }
 .section-header { margin-bottom: 50px; text-align: center; }
 .section-header h2 { font-size: 2.5rem; margin-bottom: 15px; color: var(--dark); }
 .divider { width: 60px; height: 4px; background: var(--primary); margin: 0 auto; }
 
-/* KARTY OFERTY */
+/* USŁUGI */
 .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
 .service-card { background: var(--white); padding: 40px; border-left: 5px solid var(--primary); box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: var(--transition); }
 .service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-.service-card h3 { margin-bottom: 20px; font-size: 1.4rem; }
-.service-card ul li { margin-bottom: 10px; position: relative; padding-left: 20px; }
-.service-card ul li::before { content: '•'; color: var(--primary); font-weight: bold; position: absolute; left: 0; }
 
-/* BOTTOM ACTION GRID (Index) */
-.action-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; background: var(--dark); color: var(--white); }
-.action-item { padding: 60px 40px; border-right: 1px solid #333; transition: var(--transition); text-align: center; }
-.action-item:last-child { border-right: none; background: var(--primary); }
-.action-item h3 { font-size: 1.5rem; margin-bottom: 10px; }
-.action-item:hover { background: #222; }
-.action-item:last-child:hover { background: var(--secondary); }
-
-/* KONTAKT & MAPA */
+/* KONTAKT */
 .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
-.contact-details h3 { font-size: 1.8rem; margin-bottom: 30px; }
-.info-row { margin-bottom: 20px; display: flex; align-items: center; gap: 15px; font-size: 1.1rem; }
 .map-container iframe { width: 100%; height: 400px; border-radius: 8px; filter: grayscale(100%); transition: var(--transition); }
 .map-container iframe:hover { filter: grayscale(0%); }
 
@@ -92,28 +101,9 @@ footer { background: #111; color: #888; padding: 60px 0 20px; font-size: 0.9rem;
 .footer-cols { display: flex; justify-content: space-between; margin-bottom: 40px; }
 .footer-bottom { text-align: center; border-top: 1px solid #222; padding-top: 20px; }
 
-/* RWD */
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2.2rem; }
-    .nav-links { display: none; } /* Tu można dodać JS dla menu mobilnego */
-    .action-bar, .contact-wrapper { grid-template-columns: 1fr; }
-    .action-item { border-right: none; border-bottom: 1px solid #333; }
-}
-/* Styl dla linku wewnątrz logo */
-.logo a {
-    color: inherit;         /* Pobiera kolor z .logo (czyli var(--dark)) */
-    text-decoration: none;  /* Usuwa podkreślenie */
-    display: block;         /* Sprawia, że cały obszar logo jest klikalny */
-    transition: var(--transition); /* Używa Twojej zdefiniowanej animacji */
-}
-
-/* Efekt po najechaniu - opcjonalnie */
-.logo a:hover {
-    color: var(--primary);  /* Zmienia kolor na błękitny przy najechaniu */
-}
-/* --- MENU MOBILNE (WSTĄŻKA) --- */
+/* --- MENU MOBILNE & RWD --- */
 .menu-toggle {
-    display: none; /* Ukryte na komputerze */
+    display: none;
     flex-direction: column;
     gap: 6px;
     background: none;
@@ -131,40 +121,28 @@ footer { background: #111; color: #888; padding: 60px 0 20px; font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: flex; /* Pokazuje się na telefonie */
-    }
+    .hero h1 { font-size: 2.2rem; }
+    .action-bar, .contact-wrapper { grid-template-columns: 1fr; }
+    
+    .menu-toggle { display: flex; }
 
     .nav-links {
-        display: none; /* Domyślnie ukryte */
+        display: none;
         flex-direction: column;
         position: absolute;
-        top: 100%; /* Zaraz pod headerem */
+        top: 100%;
         left: 0;
         width: 100%;
         background-color: var(--white);
         box-shadow: 0 10px 15px rgba(0,0,0,0.1);
         z-index: 1000;
-        gap: 0 !important;
     }
 
-    .nav-links.active {
-        display: flex; /* Pokazuje się po kliknięciu */
-    }
+    .nav-links.active { display: flex; }
+    .nav-links a { padding: 20px; text-align: center; border-bottom: 1px solid #eee; }
 
-    .nav-links li {
-        width: 100%;
-        border-bottom: 1px solid #eee;
-    }
+    .logo-img { height: 35px; } /* Mniejsze logo na komórki */
 
-    .nav-links a {
-        display: block;
-        padding: 20px;
-        text-align: center;
-        width: 100%;
-    }
-
-    /* Animacja ikonki w "X" po otwarciu */
     .menu-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
     .menu-toggle.open span:nth-child(2) { opacity: 0; }
     .menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(6px, -7px); }
