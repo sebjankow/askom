@@ -169,3 +169,111 @@ footer { background: #111; color: #888; padding: 60px 0 20px; font-size: 0.9rem;
     .menu-toggle.open span:nth-child(2) { opacity: 0; }
     .menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(6px, -7px); }
 }
+/* --- FAQ PAGE STYLES --- */
+.faq-page {
+    padding: var(--header-height, 100px) 0 80px; /* Uwzględnia wysokość sticky headera */
+    background-color: var(--light-gray);
+    min-height: 80vh;
+}
+
+.faq-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.faq-cat-title {
+    font-size: 1.8rem;
+    color: var(--dark);
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--primary);
+    display: inline-block;
+}
+
+.faq-box {
+    margin-bottom: 30px;
+}
+
+/* Stylizacja HTML5 Details & Summary */
+details {
+    background: var(--white);
+    margin-bottom: 15px;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+details[open] {
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+summary {
+    padding: 20px 25px;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none; /* Ukrywa domyślną strzałkę w Chrome/Firefox */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--dark);
+    transition: var(--transition);
+    user-select: none;
+}
+
+/* Własna strzałka (pseudo-element) */
+summary::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--primary);
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::after {
+    content: '-';
+    transform: rotate(180deg);
+}
+
+summary:hover {
+    background-color: #fcfcfc;
+    color: var(--primary);
+}
+
+/* Ukrycie standardowej strzałki w Safari */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-answer {
+    padding: 0 25px 25px;
+    color: #555;
+    line-height: 1.7;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    animation: slideDown 0.4s ease-out;
+}
+
+.faq-answer strong {
+    color: var(--primary);
+}
+
+/* Animacja rozwijania */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* RWD dla FAQ */
+@media (max-width: 768px) {
+    .faq-cat-title {
+        font-size: 1.4rem;
+        margin-top: 30px;
+    }
+    
+    summary {
+        padding: 15px 20px;
+        font-size: 0.95rem;
+    }
+}
