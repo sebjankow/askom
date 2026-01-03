@@ -169,11 +169,13 @@ footer { background: #111; color: #888; padding: 60px 0 20px; font-size: 0.9rem;
     .menu-toggle.open span:nth-child(2) { opacity: 0; }
     .menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(6px, -7px); }
 }
-/* --- SEKCJA FAQ (SPÓJNA Z PROJEKTEM) --- */
+/* --- SEKCJA FAQ (NAPRAWIONA I SPÓJNA) --- */
 .faq-page {
-    background-color: var(--light-gray); /* Spójne tło z .bg-light */
-    padding: 80px 0; /* Spójne z .section-padding */
-    min-height: 80vh;
+    background-color: var(--light-gray);
+    /* Zwiększony padding-top, aby menu nie zasłaniało treści */
+    /* 80px to standardowy odstęp + wysokość Twojego menu */
+    padding: 140px 0 80px 0; 
+    min-height: 100vh;
 }
 
 .faq-wrapper {
@@ -184,11 +186,11 @@ footer { background: #111; color: #888; padding: 60px 0 20px; font-size: 0.9rem;
 
 .faq-header {
     text-align: center;
-    margin-bottom: 50px; /* Spójne z .section-header */
+    margin-bottom: 50px;
 }
 
 .faq-header h1 {
-    font-size: 2.5rem; /* Spójne z h2 na stronie głównej */
+    font-size: 2.5rem;
     color: var(--dark);
     margin-bottom: 15px;
 }
@@ -198,29 +200,38 @@ footer { background: #111; color: #888; padding: 60px 0 20px; font-size: 0.9rem;
     font-size: 1.1rem;
 }
 
+/* Kreska pod nagłówkiem jak na stronie głównej */
+.faq-header .divider {
+    width: 60px;
+    height: 4px;
+    background: var(--primary);
+    margin: 0 auto 20px;
+}
+
 .faq-cat-title {
     color: var(--primary);
     font-size: 1.4rem;
     font-weight: 700;
     margin: 40px 0 20px 0;
     padding-left: 15px;
-    border-left: 4px solid var(--primary); /* Spójne z kartami ofert */
+    border-left: 4px solid var(--primary);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* Styl Akordeonu (Details) */
+/* Styl Akordeonu */
 details {
     background: var(--white);
     margin-bottom: 15px;
-    border-radius: 4px; /* Spójne z .btn i kartami */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Spójne z .service-card */
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     border: none;
     transition: var(--transition);
 }
 
+/* Przesunięcie przy hoverze - spójne z kartami */
 details:hover {
-    transform: translateX(5px); /* Subtelny efekt spójny z hoverem kart */
+    transform: translateX(5px);
 }
 
 details[open] {
@@ -254,7 +265,6 @@ details[open] summary {
 
 details[open] summary::after {
     content: '－';
-    transform: rotate(180deg);
 }
 
 .faq-answer {
@@ -265,12 +275,12 @@ details[open] summary::after {
     line-height: 1.8;
 }
 
-/* Usunięcie domyślnej strzałki w Safari */
+/* Poprawka dla Safari */
 summary::-webkit-details-marker {
     display: none;
 }
 
-/* DOPASOWANIE NAGŁÓWKA NA PODSTRONIE FAQ */
-.faq-page header.nav-container {
-    background: var(--white);
+/* Zapewnienie, że nagłówek strony jest zawsze na wierzchu */
+header {
+    z-index: 1000;
 }
