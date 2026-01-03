@@ -1,0 +1,24 @@
+name: "Linter - Sprawdzanie kodu"
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  check-html-css:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pobranie kodu
+        uses: actions/checkout@v4
+
+      - name: Sprawdzanie HTML
+        uses: htmlhint/htmlhint-action@v2
+        with:
+          base_dir: './'
+
+      - name: Sprawdzanie CSS
+        uses: stylelint/stylelint-action@v5
+        with:
+          stylelint_config: stylelint-config-standard
