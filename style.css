@@ -189,15 +189,34 @@ header {
     z-index: 1000;
 }
 
-/* --- SEKCJA FAQ --- */
+/* --- NAPRAWA GLOBALNEGO SKROLOWANIA --- */
+html, body {
+    overflow-y: auto !important; /* Wymusza możliwość przewijania */
+    height: auto !important;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- NAGŁÓWEK (WSTĄŻKA) --- */
+header {
+    background: var(--white);
+    position: fixed; /* Menu zawsze na górze ekranu */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* --- SEKCJA FAQ (POPRAWIONA) --- */
 .faq-page {
     background-color: var(--light-gray);
-    /* Padding-top musi być wystarczająco duży (menu ma ok 80-90px) */
-    padding: 140px 0 80px 0 !important; 
-    min-height: 100vh;
+    /* Zwiększony padding-top (160px), aby treść "wyjechała" spod menu i była w pełni widoczna */
+    padding: 160px 0 80px 0 !important; 
+    min-height: 100vh; /* Zapewnia tło na całą wysokość ekranu */
     display: block;
     position: relative;
-    z-index: 1; /* Musi być niższy niż header */
+    z-index: 1; /* Pod menu */
 }
 
 .faq-wrapper {
@@ -212,37 +231,38 @@ header {
 }
 
 .faq-header h1 {
-    font-size: 2.5rem;
+    font-size: 3rem; /* Wyraźny tytuł */
     color: var(--dark);
     margin-bottom: 15px;
 }
 
-.faq-header p {
-    color: #666;
-    font-size: 1.1rem;
-}
-
-/* Kreska pod nagłówkiem */
+/* Niebieska kreska pod tytułem - spójność z Twoim stylem */
 .faq-header .divider {
     width: 60px;
     height: 4px;
     background: var(--primary);
-    margin: 15px auto;
+    margin: 20px auto;
 }
 
-/* KATEGORIE */
+.faq-header p {
+    color: #555;
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- KATEGORIE I AKORDEON --- */
 .faq-cat-title {
     color: var(--primary);
     font-size: 1.4rem;
     font-weight: 700;
-    margin: 40px 0 20px 0;
+    margin: 50px 0 25px 0;
     padding-left: 15px;
-    border-left: 4px solid var(--primary);
+    border-left: 5px solid var(--primary);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* STYL AKORDEONU (DETAILS) */
 details {
     background: var(--white);
     margin-bottom: 15px;
@@ -261,9 +281,9 @@ details[open] {
 }
 
 summary {
-    padding: 20px 25px;
+    padding: 22px 25px;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.05rem;
     cursor: pointer;
     list-style: none;
     display: flex;
@@ -282,7 +302,7 @@ summary::after {
 
 details[open] summary {
     color: var(--primary);
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 details[open] summary::after {
@@ -290,14 +310,14 @@ details[open] summary::after {
 }
 
 .faq-answer {
-    padding: 20px 25px;
+    padding: 25px;
     color: var(--text);
     background-color: var(--white);
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.8;
 }
 
-/* Poprawka dla Safari */
+/* Safari Fix */
 summary::-webkit-details-marker {
     display: none;
 }
