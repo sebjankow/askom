@@ -1,5 +1,7 @@
 # ASKOM - Usługi Informatyczne
 
+![Uptime](https://img.shields.io/website?down_color=red&down_message=leży&label=Status%20strony&up_color=green&up_message=działa&url=https%3A%2F%2Faskom.waw.pl)
+
 Oficjalne repozytorium strony internetowej firmy **ASKOM Sebastian Jankowski**. Strona pełni rolę wizytówki biznesowej, prezentującej ofertę serwisową oraz wsparcie techniczne dla systemów InsERT.
 
 ## 🚀 O Projekcie
