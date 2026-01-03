@@ -267,13 +267,22 @@ summary::-webkit-details-marker {
 
 /* RWD dla FAQ */
 @media (max-width: 768px) {
-    .faq-cat-title {
-        font-size: 1.4rem;
-        margin-top: 30px;
+    /* To sprawi, że ASKOM i Hamburger odskoczą na boki */
+    .nav-container {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        padding: 15px 20px; /* Odstęp od krawędzi ekranu */
     }
-    
-    summary {
-        padding: 15px 20px;
-        font-size: 0.95rem;
+
+    .hero h1 { font-size: 2.2rem; }
+    .nav-links { display: none; } 
+    .action-bar, .contact-wrapper { grid-template-columns: 1fr; }
+    .action-item { border-right: none; border-bottom: 1px solid #333; }
+
+    /* Upewnij się, że menu-toggle nie ma zbędnych marginesów */
+    .menu-toggle {
+        display: flex; 
+        margin: 0; 
     }
 }
