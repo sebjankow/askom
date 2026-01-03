@@ -169,10 +169,11 @@ footer { background: #111; color: #888; padding: 60px 0 20px; font-size: 0.9rem;
     .menu-toggle.open span:nth-child(2) { opacity: 0; }
     .menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(6px, -7px); }
 }
+/* --- SEKCJA FAQ (SPÓJNA Z PROJEKTEM) --- */
 .faq-page {
-    background-color: #f4f7f9;
-    padding: 60px 0;
-    min-height: 100vh;
+    background-color: var(--light-gray); /* Spójne tło z .bg-light */
+    padding: 80px 0; /* Spójne z .section-padding */
+    min-height: 80vh;
 }
 
 .faq-wrapper {
@@ -183,67 +184,93 @@ footer { background: #111; color: #888; padding: 60px 0 20px; font-size: 0.9rem;
 
 .faq-header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 50px; /* Spójne z .section-header */
 }
 
 .faq-header h1 {
-    color: #003366;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 2.5rem; /* Spójne z h2 na stronie głównej */
+    color: var(--dark);
+    margin-bottom: 15px;
+}
+
+.faq-header p {
+    color: #666;
+    font-size: 1.1rem;
 }
 
 .faq-cat-title {
-    color: #0056b3;
-    font-size: 1.3rem;
-    margin: 30px 0 15px 0;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #ddd;
+    color: var(--primary);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 40px 0 20px 0;
+    padding-left: 15px;
+    border-left: 4px solid var(--primary); /* Spójne z kartami ofert */
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
+/* Styl Akordeonu (Details) */
 details {
-    background: #fff;
-    margin-bottom: 12px;
-    border-radius: 8px;
-    border: 1px solid #e1e8ed;
-    overflow: hidden;
-    transition: 0.3s;
+    background: var(--white);
+    margin-bottom: 15px;
+    border-radius: 4px; /* Spójne z .btn i kartami */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Spójne z .service-card */
+    border: none;
+    transition: var(--transition);
+}
+
+details:hover {
+    transform: translateX(5px); /* Subtelny efekt spójny z hoverem kart */
 }
 
 details[open] {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    border-color: #0056b3;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 summary {
-    padding: 18px 25px;
-    font-weight: 600;
+    padding: 20px 25px;
+    font-weight: 700;
+    font-size: 1rem;
     cursor: pointer;
     list-style: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #334e68;
+    color: var(--dark);
+    user-select: none;
 }
 
 summary::after {
-    content: "＋";
-    color: #0056b3;
-    font-weight: bold;
-    transition: 0.3s;
+    content: '＋';
+    color: var(--primary);
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+details[open] summary {
+    color: var(--primary);
+    border-bottom: 1px solid #eee;
 }
 
 details[open] summary::after {
-    content: "－";
+    content: '－';
     transform: rotate(180deg);
 }
 
 .faq-answer {
-    padding: 0 25px 20px 25px;
-    color: #486581;
-    line-height: 1.6;
-    background-color: #fcfdfe;
+    padding: 20px 25px;
+    color: var(--text);
+    background-color: var(--white);
+    font-size: 0.95rem;
+    line-height: 1.8;
 }
 
+/* Usunięcie domyślnej strzałki w Safari */
 summary::-webkit-details-marker {
     display: none;
+}
+
+/* DOPASOWANIE NAGŁÓWKA NA PODSTRONIE FAQ */
+.faq-page header.nav-container {
+    background: var(--white);
 }
