@@ -1,4 +1,6 @@
-/* --- TWOJA ORYGINALNA BAZA (KTÓRA DZIAŁAŁA) --- */
+/* --- POZOSTAŁE STYLE (HERO, PRZYCISKI, SEKCJE, USŁUGI, KONTAKT, STOPKA I RWD) BEZ ZMIAN --- */
+/* Zostaw je tak, jak masz w swoim głównym pliku */
+
 :root {
     --primary: #0056b3;
     --secondary: #004494;
@@ -22,7 +24,7 @@ body {
 
 @keyframes fadeIn { to { opacity: 1; } }
 
-/* NAWIGACJA - PRZYWRÓCONY STICKY */
+/* NAWIGACJA - ORYGINALNY STICKY */
 header { 
     background: var(--white); 
     box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
@@ -35,40 +37,33 @@ header {
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
-    padding: 20px 0; 
+    padding: 15px 0; 
     max-width: 1200px; 
     margin: 0 auto; 
-    padding: 20px;
+    padding: 15px 20px;
 }
 
-.logo { font-size: 1.8rem; font-weight: 800; color: var(--dark); }
+.logo { font-size: 1.8rem; font-weight: 800; color: var(--dark); letter-spacing: -1px; }
+.logo a { text-decoration: none; color: inherit; }
 .logo span { color: var(--primary); }
-.logo a { color: inherit; text-decoration: none; }
 
 .nav-links { display: flex; gap: 40px; }
-.nav-links a { font-weight: 600; text-transform: uppercase; color: var(--dark); position: relative; }
-.nav-links a.active { color: var(--primary); }
+.nav-links a { font-weight: 600; font-size: 0.95rem; text-transform: uppercase; color: var(--dark); position: relative; }
+.nav-links a:hover, .nav-links a.active { color: var(--primary); }
 
-/* --- SEKCJA FAQ - CAŁKOWICIE ODPORNA NA BŁĘDY --- */
-
-/* To rozwiązuje problem przysłaniania treści przez menu sticky/fixed */
+/* --- SEKCJA FAQ (BEZPIECZNA POPRAWKA) --- */
 .faq-page {
     background-color: var(--light-gray);
-    padding: 60px 0; /* Standardowy padding */
     min-height: 80vh;
+    padding: 40px 0 80px 0;
 }
 
-/* Specjalny "odbojnik" pod menu, żeby tekst nie wchodził pod spód */
-.faq-page::before {
-    content: "";
-    display: block;
-    height: 20px; /* Dodatkowa przestrzeń bezpośrednio pod menu */
-}
-
+/* To sprawia, że po kliknięciu w link FAQ tekst nie chowa się pod menu */
 .faq-wrapper {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 20px 20px;
+    scroll-margin-top: 100px; 
 }
 
 .faq-header {
@@ -79,65 +74,55 @@ header {
 .faq-header h1 {
     font-size: 2.5rem;
     color: var(--dark);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-.divider { 
-    width: 60px; 
-    height: 4px; 
-    background: var(--primary); 
-    margin: 15px auto; 
+.faq-header p {
+    color: #666;
+    font-size: 1.1rem;
 }
 
-/* STYL KATEGORII I PYTAŃ */
 .faq-cat-title {
     color: var(--primary);
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 700;
     margin: 40px 0 20px 0;
-    text-transform: uppercase;
-    border-left: 4px solid var(--primary);
     padding-left: 15px;
+    border-left: 4px solid var(--primary);
+    text-transform: uppercase;
 }
 
+/* AKORDEON */
 details {
     background: var(--white);
-    margin-bottom: 12px;
+    margin-bottom: 15px;
     border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: var(--transition);
 }
 
+details:hover { transform: translateX(5px); }
+
 summary {
-    padding: 20px;
+    padding: 20px 25px;
     font-weight: 700;
     cursor: pointer;
     list-style: none;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     color: var(--dark);
 }
 
-summary::after { content: '＋'; color: var(--primary); }
+summary::after { content: '＋'; color: var(--primary); font-size: 1.2rem; }
 details[open] summary::after { content: '－'; }
+details[open] summary { color: var(--primary); border-bottom: 1px solid #eee; }
 
 .faq-answer {
-    padding: 0 20px 20px 20px;
+    padding: 20px 25px;
     color: var(--text);
-    font-size: 0.95rem;
-    line-height: 1.7;
+    background-color: var(--white);
+    line-height: 1.8;
 }
 
-/* MENU MOBILNE (ORGINAŁ) */
-@media (max-width: 768px) {
-    .nav-links { display: none; }
-    .nav-links.active {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: white;
-        padding: 20px;
-    }
-}
+summary::-webkit-details-marker { display: none; }
