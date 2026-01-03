@@ -10,10 +10,11 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Audit Lighthouse
+        # Używamy pełnej nazwy oficjalnego repozytorium
         uses: treosh/lighthouse-ci-action@v12
         with:
-          # Ponieważ strona jest statyczna, sprawdzamy lokalnie plik index.html
+          staticDistDir: './'
           urls: |
-            index.html
-          uploadArtifacts: true # Zapisuje raport jako plik do pobrania
-          temporaryPublicStorage: true # Tworzy publiczny link do raportu
+            http://localhost:8080/index.html
+          uploadArtifacts: true
+          temporaryPublicStorage: true
