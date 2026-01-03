@@ -173,6 +173,32 @@
         navList.classList.toggle('active');
     });
 </script>
+<script>
+(function(){
+  const header = document.querySelector('header');
 
+  function updateHeaderHeight(){
+    const h = header ? header.offsetHeight : 0;
+    // ustawiamy wartość bez jednostki tylko w razie potrzeby; dodajemy px
+    document.documentElement.style.setProperty('--header-height', h + 'px');
+  }
+
+  // zadziała od razu
+  updateHeaderHeight();
+
+  // aktualizuj przy resize
+  window.addEventListener('resize', updateHeaderHeight);
+
+  // obserwuj zmiany rozmiaru (np. gdy menu mobilne się rozwinie)
+  if (window.ResizeObserver && header) {
+    new ResizeObserver(updateHeaderHeight).observe(header);
+  }
+
+  // obserwuj mutacje DOM nagłówka (np. zmiana klasy open na menu)
+  if (window.MutationObserver && header) {
+    new MutationObserver(updateHeaderHeight).observe(header, { attributes: true, childList: true, subtree: true });
+  }
+})();
+</script>
 </body>
 </html>

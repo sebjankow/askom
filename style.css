@@ -148,3 +148,29 @@ footer { background: #111; color: #888; padding: 60px 0 20px; border-top: 3px so
     
     .faq-header h1 { font-size: 2.2rem; }
 }
+/* --- HEADER OFFSET HELPERS (DO DODANIA) --- */
+/* globalnie zapobiega zasłanianiu przy przewinięciach do kotwic */
+html {
+  scroll-padding-top: var(--header-height);
+}
+
+/* dodatkowa ochrona dla elementów FAQ, summary i nagłówków */
+.faq-wrapper h1,
+.faq-wrapper h2,
+.faq-wrapper .faq-cat-title,
+.faq-wrapper summary,
+.faq-wrapper details {
+  /* mały bufor 12px by nagłówek nie kleił się bezpośrednio do krawędzi */
+  scroll-margin-top: calc(var(--header-height) + 12px);
+}
+
+/* opcjonalnie: jeśli używasz focus lub :target na elementach wewnątrz FAQ */
+.faq-wrapper :target {
+  scroll-margin-top: calc(var(--header-height) + 12px);
+}
+
+/* kosmetyka: zapobiega nadmiernemu przesunięciu przy otwieraniu details */
+details[open] {
+  /* nie przesuwamy zawartości w pionie niepotrzebnie */
+  transform: none;
+}
