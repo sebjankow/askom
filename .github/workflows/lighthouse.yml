@@ -1,0 +1,19 @@
+name: "Lighthouse - Raport jakości"
+
+on: [push]
+
+jobs:
+  lighthouse-report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pobranie kodu
+        uses: actions/checkout@v4
+
+      - name: Audit Lighthouse
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          # Ponieważ strona jest statyczna, sprawdzamy lokalnie plik index.html
+          urls: |
+            index.html
+          uploadArtifacts: true # Zapisuje raport jako plik do pobrania
+          temporaryPublicStorage: true # Tworzy publiczny link do raportu
