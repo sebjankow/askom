@@ -83,21 +83,30 @@
         </a>
     </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-cols">
-                <div>
-                    <strong>ASKOM Sebastian Jankowski</strong><br>
-                    NIP: PL5321629359
-                </div>
-                
-                <div class="footer-bottom">
-                    &copy; 2026 ASKOM. All rights reserved.
-                </div>
+   <footer>
+    <div class="container">
+        <div class="footer-cols">
+            <div>
+                <strong>ASKOM Sebastian Jankowski</strong><br>
+                NIP: PL5321629359
+            </div>
+            
+            <div class="footer-bottom">
+                &copy; <span id="current-year"></span> ASKOM. All rights reserved.
             </div>
         </div>
-    </footer>
-    <script>
+    </div>
+</footer>
+
+<script>
+    // Automatyczna aktualizacja roku w stopce (2005 - bieżący rok)
+    const startYear = 2005;
+    const currentYear = new Date().getFullYear();
+    const yearSpan = document.getElementById('current-year');
+    
+    yearSpan.textContent = (currentYear === startYear) ? `${startYear}` : `${startYear}–${currentYear}`;
+
+    // Twoja dotychczasowa logika menu
     const menuBtn = document.getElementById('mobile-menu');
     const navList = document.getElementById('nav-list');
 
@@ -106,7 +115,6 @@
         menuBtn.classList.toggle('open');
     });
 
-    // Zamyka menu po kliknięciu w link
     document.querySelectorAll('.nav-links a').forEach(n => n.addEventListener('click', () => {
         navList.classList.remove('active');
         menuBtn.classList.remove('open');
