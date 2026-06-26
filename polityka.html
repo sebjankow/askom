@@ -82,35 +82,42 @@
             <p style="margin-top: 40px; font-weight: bold;">Data ostatniej aktualizacji: 02.01.2026 r.</p>
         </div>
     </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-cols">
-                <div>
-                    <strong>ASKOM Sebastian Jankowski</strong><br>
-                    NIP: PL5321629359
-                </div>
-                
-                <div class="footer-bottom">
-                    &copy; 2026 ASKOM. All rights reserved.
-                </div>
+<footer>
+    <div class="container">
+        <div class="footer-cols">
+            <div>
+                <strong>ASKOM Sebastian Jankowski</strong><br>
+                NIP: PL5321629359
+            </div>
+            
+            <div class="footer-bottom">
+                &copy; <span id="current-year"></span> ASKOM. All rights reserved.
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <script>
-        const menuBtn = document.getElementById('mobile-menu');
-        const navList = document.getElementById('nav-list');
+<script>
+    // Automatyczna aktualizacja roku w stopce (2005 - bieżący rok)
+    const startYear = 2005;
+    const currentYear = new Date().getFullYear();
+    const yearSpan = document.getElementById('current-year');
+    
+    yearSpan.textContent = (currentYear === startYear) ? `${startYear}` : `${startYear}–${currentYear}`;
 
-        menuBtn.addEventListener('click', () => {
-            navList.classList.toggle('active');
-            menuBtn.classList.toggle('open');
-        });
+    // Twoja dotychczasowa logika menu
+    const menuBtn = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
 
-        document.querySelectorAll('.nav-links a').forEach(n => n.addEventListener('click', () => {
-            navList.classList.remove('active');
-            menuBtn.classList.remove('open');
-        }));
-    </script>
+    menuBtn.addEventListener('click', () => {
+        navList.classList.toggle('active');
+        menuBtn.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(n => n.addEventListener('click', () => {
+        navList.classList.remove('active');
+        menuBtn.classList.remove('open');
+    }));
+</script>
 </body>
 </html>
