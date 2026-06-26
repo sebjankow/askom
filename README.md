@@ -34,5 +34,7 @@ Dostępność strony jest monitorowana w trybie 24/7 przez zewnętrzny system **
 ✉️ E-mail: askom@askom.waw.pl  
 🌐 Strona: [askom.waw.pl](https://askom.waw.pl)
 
----
-*Copyright © 2026 ASKOM. Wszystkie prawa zastrzeżone.*
+## Prawa autorskie / Copyright
+PL: © 2026 ASKOM Sebastian Jankowski. Wszystkie prawa zastrzeżone. Kod źródłowy oraz projekt strony są własnością firmy ASKOM. Kopiowanie bez zgody jest zabronione.
+
+EN: © 2026 ASKOM Sebastian Jankowski. All rights reserved. The source code and website design are the property of ASKOM. Copying without permission is prohibited.
