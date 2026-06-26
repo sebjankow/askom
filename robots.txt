@@ -1,1 +1,3 @@
-sitemap: https://askom.waw.pl/sitemap.xml
+User-agent: *
+Allow: /
+Sitemap: https://askom.waw.pl/sitemap.xml
