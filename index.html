@@ -7,6 +7,8 @@
         "@type": "LocalBusiness",
         "name": "ASKOM Sebastian Jankowski",
         "url": "https://askom.waw.pl",
+        "image": "https://askom.waw.pl/logo.jpg",
+        "logo": "https://askom.waw.pl/logo.jpg",
         "telephone": "+48600202796",
         "email": "info@askom.waw.pl",
         "address": {
@@ -26,10 +28,11 @@
             "cyberbezpieczeństwo", "Microsoft 365", "outsourcing IT"
         ],
         "vatID": "PL5321629359",
+        "taxID": "5321629359",
         "geo": {
             "@type": "GeoCoordinates",
-            "latitude": 52.1271,
-            "longitude": 21.2592
+            "latitude": 52.127154,
+            "longitude": 21.259198
         }
         }
     </script>
@@ -45,16 +48,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="ASKOM – profesjonalna obsługa IT dla firm w Warszawie i Otwocku. Certyfikowany serwis InsERT, cyberbezpieczeństwo, Microsoft 365 i outsourcing IT.">
-    <title>ASKOM | Strategiczne IT dla Biznesu</title>
+    <title>ASKOM | Serwis InsERT i obsługa IT dla firm – Otwock, Warszawa</title>
+    <link rel="canonical" href="https://askom.waw.pl/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="ASKOM">
+    <meta property="og:title" content="ASKOM | Serwis InsERT i obsługa IT dla firm – Otwock, Warszawa">
+    <meta property="og:description" content="ASKOM – profesjonalna obsługa IT dla firm w Warszawie i Otwocku. Certyfikowany serwis InsERT, cyberbezpieczeństwo, Microsoft 365 i outsourcing IT.">
+    <meta property="og:url" content="https://askom.waw.pl/">
+    <meta property="og:image" content="https://askom.waw.pl/logo.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="theme-color" content="#0056b3">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Przejdź do treści</a>
 
         <header>
     <div class="container nav-container">
         <div class="logo"><a href="index.html">ASKOM</a></div>
         
-        <button class="menu-toggle" id="mobile-menu" aria-label="Otwórz menu">
+        <button class="menu-toggle" id="mobile-menu" aria-label="Otwórz menu" aria-expanded="false" aria-controls="nav-list">
             <span></span>
             <span></span>
             <span></span>
@@ -70,7 +84,7 @@
         </nav>
     </div>
 </header>
-    <section class="hero">
+    <section class="hero" id="main" tabindex="-1">
         <div class="container">
             <h1>Twoja firma<br>Technologia<br>Wspólny wzrost</h1>
             <p>Profesjonalne zarządzanie infrastrukturą i cyberbezpieczeństwem</p>
@@ -111,8 +125,8 @@
             <p>Szkolenia, Audyty, Ochrona danych&rarr;</p>
         </a>
         <a href="kontakt.html" class="action-item">
-            <h3>Strefa Klienta</h3>
-            <p>Skontaktuj się i zleć usługę &rarr;</p>
+            <h3>Zleć usługę</h3>
+            <p>Zadzwoń lub napisz &rarr;</p>
         </a>
     </section>
 
@@ -121,37 +135,18 @@
         <div class="footer-cols">
             <div>
                 <strong>ASKOM Sebastian Jankowski</strong><br>
-                NIP: PL5321629359
+                NIP: PL5321629359<br>
+                ul. Majowa 72, 05-402 Otwock<br>
+                <a href="tel:+48600202796">+48 600 202 796</a> · <a href="mailto:info@askom.waw.pl">info@askom.waw.pl</a>
             </div>
             
             <div class="footer-bottom">
-                &copy; <span id="current-year"></span> ASKOM. All rights reserved.
+                &copy; <span id="current-year"></span> ASKOM. Wszelkie prawa zastrzeżone.
             </div>
         </div>
     </div>
 </footer>
 
-<script>
-    // Automatyczna aktualizacja roku w stopce (2005 - bieżący rok)
-    const startYear = 2005;
-    const currentYear = new Date().getFullYear();
-    const yearSpan = document.getElementById('current-year');
-    
-    yearSpan.textContent = (currentYear === startYear) ? `${startYear}` : `${startYear}–${currentYear}`;
-
-    // Twoja dotychczasowa logika menu
-    const menuBtn = document.getElementById('mobile-menu');
-    const navList = document.getElementById('nav-list');
-
-    menuBtn.addEventListener('click', () => {
-        navList.classList.toggle('active');
-        menuBtn.classList.toggle('open');
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(n => n.addEventListener('click', () => {
-        navList.classList.remove('active');
-        menuBtn.classList.remove('open');
-    }));
-</script>
+<script src="main.js"></script>
 </body>
 </html>

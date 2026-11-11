@@ -30,15 +30,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Kompleksowa oferta IT: od obsługi infrastruktury, przez audyty cyberbezpieczeństwa, po profesjonalny rozwój stron www. ASKOM - technologia i wzrost Twojej firmy.">
     <title>ASKOM | Zakres Usług</title>
+    <link rel="canonical" href="https://askom.waw.pl/oferta.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="ASKOM">
+    <meta property="og:title" content="ASKOM | Zakres Usług">
+    <meta property="og:description" content="Kompleksowa oferta IT: od obsługi infrastruktury, przez audyty cyberbezpieczeństwa, po profesjonalny rozwój stron www. ASKOM - technologia i wzrost Twojej firmy.">
+    <meta property="og:url" content="https://askom.waw.pl/oferta.html">
+    <meta property="og:image" content="https://askom.waw.pl/logo.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="theme-color" content="#0056b3">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Przejdź do treści</a>
 
     <header>
     <div class="container nav-container">
         <div class="logo"><a href="index.html">ASKOM</a></div>
         
-        <button class="menu-toggle" id="mobile-menu" aria-label="Otwórz menu">
+        <button class="menu-toggle" id="mobile-menu" aria-label="Otwórz menu" aria-expanded="false" aria-controls="nav-list">
             <span></span>
             <span></span>
             <span></span>
@@ -55,7 +66,7 @@
     </div>
 </header>
 
-    <section class="section-padding bg-light">
+    <section class="section-padding bg-light" id="main" tabindex="-1">
         <div class="container">
             <div class="section-header">
                 <h1>Kompletna oferta IT</h1>
@@ -127,37 +138,18 @@
         <div class="footer-cols">
             <div>
                 <strong>ASKOM Sebastian Jankowski</strong><br>
-                NIP: PL5321629359
+                NIP: PL5321629359<br>
+                ul. Majowa 72, 05-402 Otwock<br>
+                <a href="tel:+48600202796">+48 600 202 796</a> · <a href="mailto:info@askom.waw.pl">info@askom.waw.pl</a>
             </div>
             
             <div class="footer-bottom">
-                &copy; <span id="current-year"></span> ASKOM. All rights reserved.
+                &copy; <span id="current-year"></span> ASKOM. Wszelkie prawa zastrzeżone.
             </div>
         </div>
     </div>
 </footer>
 
-<script>
-    // Automatyczna aktualizacja roku w stopce (2005 - bieżący rok)
-    const startYear = 2005;
-    const currentYear = new Date().getFullYear();
-    const yearSpan = document.getElementById('current-year');
-    
-    yearSpan.textContent = (currentYear === startYear) ? `${startYear}` : `${startYear}–${currentYear}`;
-
-    // Twoja dotychczasowa logika menu
-    const menuBtn = document.getElementById('mobile-menu');
-    const navList = document.getElementById('nav-list');
-
-    menuBtn.addEventListener('click', () => {
-        navList.classList.toggle('active');
-        menuBtn.classList.toggle('open');
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(n => n.addEventListener('click', () => {
-        navList.classList.remove('active');
-        menuBtn.classList.remove('open');
-    }));
-</script>
+<script src="main.js"></script>
 </body>
 </html>

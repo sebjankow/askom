@@ -6,7 +6,7 @@
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "ASKOM Sebastian Jankowski",
-        "image": "https://askom.waw.pl/logo.png",
+        "image": "https://askom.waw.pl/logo.jpg",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "ul. Majowa 72",
@@ -23,6 +23,7 @@
         "telephone": "+48600202796",
         "email": "info@askom.waw.pl",
         "taxID": "5321629359",
+        "vatID": "PL5321629359",
         "areaServed": ["Warszawa", "Otwock", "Józefów", "Sulejówek", "Stara Miłosna", "Mińsk Mazowiecki"]
         }
     </script>
@@ -39,15 +40,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Potrzebujesz wsparcia IT w Otwocku, Warszawie i okolicach? Skontaktuj się z ASKOM Sebastian Jankowski. Profesjonalna obsługa, audyty i wdrożenia.">
     <title>ASKOM | Kontakt</title>
+    <link rel="canonical" href="https://askom.waw.pl/kontakt.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="ASKOM">
+    <meta property="og:title" content="ASKOM | Kontakt">
+    <meta property="og:description" content="Potrzebujesz wsparcia IT w Otwocku, Warszawie i okolicach? Skontaktuj się z ASKOM Sebastian Jankowski. Profesjonalna obsługa, audyty i wdrożenia.">
+    <meta property="og:url" content="https://askom.waw.pl/kontakt.html">
+    <meta property="og:image" content="https://askom.waw.pl/logo.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="theme-color" content="#0056b3">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Przejdź do treści</a>
 
         <header>
     <div class="container nav-container">
         <div class="logo"><a href="index.html">ASKOM</a></div>
         
-        <button class="menu-toggle" id="mobile-menu" aria-label="Otwórz menu">
+        <button class="menu-toggle" id="mobile-menu" aria-label="Otwórz menu" aria-expanded="false" aria-controls="nav-list">
             <span></span>
             <span></span>
             <span></span>
@@ -64,7 +76,7 @@
     </div>
 </header>
 
-    <section class="section-padding">
+    <section class="section-padding" id="main" tabindex="-1">
         <div class="container contact-wrapper">
            
             <div class="contact-details">
@@ -89,7 +101,7 @@
             </div>
 
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2449.393963560797!2d21.259198077080143!3d52.12715476523978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47192ac306d787cf%3A0x8708c1ab6dbe95e4!2sASKOM%20Sebastian%20Jankowski!5e0!3m2!1spl!2spl!4v1767296216655!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe title="Mapa dojazdu: ASKOM, ul. Majowa 72, Otwock" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2449.393963560797!2d21.259198077080143!3d52.12715476523978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47192ac306d787cf%3A0x8708c1ab6dbe95e4!2sASKOM%20Sebastian%20Jankowski!5e0!3m2!1spl!2spl!4v1767296216655!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
         </div>
@@ -100,37 +112,18 @@
         <div class="footer-cols">
             <div>
                 <strong>ASKOM Sebastian Jankowski</strong><br>
-                NIP: PL5321629359
+                NIP: PL5321629359<br>
+                ul. Majowa 72, 05-402 Otwock<br>
+                <a href="tel:+48600202796">+48 600 202 796</a> · <a href="mailto:info@askom.waw.pl">info@askom.waw.pl</a>
             </div>
             
             <div class="footer-bottom">
-                &copy; <span id="current-year"></span> ASKOM. All rights reserved.
+                &copy; <span id="current-year"></span> ASKOM. Wszelkie prawa zastrzeżone.
             </div>
         </div>
     </div>
 </footer>
 
-<script>
-    // Automatyczna aktualizacja roku w stopce (2005 - bieżący rok)
-    const startYear = 2005;
-    const currentYear = new Date().getFullYear();
-    const yearSpan = document.getElementById('current-year');
-    
-    yearSpan.textContent = (currentYear === startYear) ? `${startYear}` : `${startYear}–${currentYear}`;
-
-    // Twoja dotychczasowa logika menu
-    const menuBtn = document.getElementById('mobile-menu');
-    const navList = document.getElementById('nav-list');
-
-    menuBtn.addEventListener('click', () => {
-        navList.classList.toggle('active');
-        menuBtn.classList.toggle('open');
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(n => n.addEventListener('click', () => {
-        navList.classList.remove('active');
-        menuBtn.classList.remove('open');
-    }));
-</script>
+<script src="main.js"></script>
 </body>
 </html>

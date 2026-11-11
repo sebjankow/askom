@@ -31,7 +31,7 @@ Dostępność strony jest monitorowana w trybie 24/7 przez zewnętrzny system **
 ### Kontakt
 **ASKOM Sebastian Jankowski** 📍 Otwock, woj. Mazowieckie  
 📞 Telefon: +48 600 202 796  
-✉️ E-mail: askom@askom.waw.pl  
+✉️ E-mail: info@askom.waw.pl  
 🌐 Strona: [askom.waw.pl](https://askom.waw.pl)
 
 ## Prawa autorskie / Copyright

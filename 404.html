@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <meta name="description" content="ASKOM Sebastian Jankowski – obsługa IT, serwis InsERT i cyberbezpieczeństwo w Otwocku i Warszawie.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Błąd 404 | ASKOM</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <style>
         .error-container {
             text-align: center;
@@ -28,12 +34,13 @@
     </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Przejdź do treści</a>
 
     <header>
         <div class="container nav-container">
-            <div class="logo"><a href="index.html">ASKOM</a></div>
+            <div class="logo"><a href="/index.html">ASKOM</a></div>
             
-            <button class="menu-toggle" id="mobile-menu" aria-label="Otwórz menu">
+            <button class="menu-toggle" id="mobile-menu" aria-label="Otwórz menu" aria-expanded="false" aria-controls="nav-list">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -41,20 +48,20 @@
 
             <nav>
                 <ul class="nav-links" id="nav-list">
-                    <li><a href="index.html">Strona główna</a></li>
-                    <li><a href="oferta.html">Oferta</a></li>
-                    <li><a href="polityka.html">Polityka prywatności</a></li>
-                    <li><a href="kontakt.html">Kontakt</a></li>
+                    <li><a href="/index.html">Strona główna</a></li>
+                    <li><a href="/oferta.html">Oferta</a></li>
+                    <li><a href="/polityka.html">Polityka prywatności</a></li>
+                    <li><a href="/kontakt.html">Kontakt</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <div class="container error-container">
+    <div class="container error-container" id="main" tabindex="-1">
         <div class="error-code">404</div>
         <h2>Ups! Zagubiłeś się w sieci?</h2>
         <p>Strona, której szukasz, nie istnieje lub została przeniesiona pod inny adres.</p>
-        <a href="index.html" class="btn btn-main">Wróć do strony głównej</a>
+        <a href="/index.html" class="btn btn-main">Wróć do strony głównej</a>
     </div>
 
 <footer>
@@ -62,37 +69,18 @@
         <div class="footer-cols">
             <div>
                 <strong>ASKOM Sebastian Jankowski</strong><br>
-                NIP: PL5321629359
+                NIP: PL5321629359<br>
+                ul. Majowa 72, 05-402 Otwock<br>
+                <a href="tel:+48600202796">+48 600 202 796</a> · <a href="mailto:info@askom.waw.pl">info@askom.waw.pl</a>
             </div>
             
             <div class="footer-bottom">
-                &copy; <span id="current-year"></span> ASKOM. All rights reserved.
+                &copy; <span id="current-year"></span> ASKOM. Wszelkie prawa zastrzeżone.
             </div>
         </div>
     </div>
 </footer>
 
-<script>
-    // Automatyczna aktualizacja roku w stopce (2005 - bieżący rok)
-    const startYear = 2005;
-    const currentYear = new Date().getFullYear();
-    const yearSpan = document.getElementById('current-year');
-    
-    yearSpan.textContent = (currentYear === startYear) ? `${startYear}` : `${startYear}–${currentYear}`;
-
-    // Twoja dotychczasowa logika menu
-    const menuBtn = document.getElementById('mobile-menu');
-    const navList = document.getElementById('nav-list');
-
-    menuBtn.addEventListener('click', () => {
-        navList.classList.toggle('active');
-        menuBtn.classList.toggle('open');
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(n => n.addEventListener('click', () => {
-        navList.classList.remove('active');
-        menuBtn.classList.remove('open');
-    }));
-</script>
+<script src="/main.js"></script>
 </body>
 </html>

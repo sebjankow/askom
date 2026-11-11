@@ -1,21 +1,16 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "ASKOM Sebastian Jankowski – obsługa IT",
+  "short_name": "ASKOM",
+  "description": "Serwis InsERT, cyberbezpieczeństwo, Microsoft 365 i outsourcing IT dla firm w Otwocku i Warszawie.",
+  "lang": "pl",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
-    {
-      "src": "/web-app-manifest-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "/web-app-manifest-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    }
+    { "src": "/web-app-manifest-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/web-app-manifest-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#0056b3",
+  "background_color": "#101519",
   "display": "standalone"
 }
